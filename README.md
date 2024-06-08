@@ -29,8 +29,41 @@ emitter.emit('join', 'dolanske', Date.now())
 
 ##### On
 
-Register an event listener
+Register an event listener. The callback types are based on the name of the base events.
+Returns function, that when called, removes the provided callback from the listeners.
 
 ```ts
-emitter.on<EventName extends keyof Events>(event: EventName, callback: Events[EventName])
+emitter.on<Name extends keyof Events>(event: Name, callback: Events[Name]) => StopperFn
+```
+
+##### Emit
+
+Emit an event. This event can also contain optional parameters
+
+```ts
+emitter.emit<Name extends keyof Events>(event: Name, ...args: Parameters<Events[Name]>) => void
+```
+
+##### Flush
+
+Similar to `emit`, but all registered listener callbacks are removed afterwards.
+
+```ts
+emitter.flush<Name extends keyof Events>(event: Name, ...args: Parameters<Events[Name]>) => void
+```
+
+##### Clear key
+
+Removes all registered listener callbacks for a specific event.
+
+```ts
+emitter.clearKey<Name extends keyof Events>(event: Name) => void
+```
+
+##### Reset
+
+Resets the entire emitter. Remove all registered listener callbacks.
+
+```ts
+emitter.reset() => void
 ```
