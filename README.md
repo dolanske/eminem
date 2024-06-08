@@ -5,6 +5,8 @@ Have you ever wanted to register and emit events and realized there's not a sing
 ### How to use it
 
 ```ts
+import { createEminem } from '@dolanske/eminem'
+
 interface Events {
   join: (username: string, timestamp: number) => void
 }
@@ -25,4 +27,10 @@ emitter.emit('join', 'dolanske', Date.now())
 
 ### Api
 
-TODO
+##### On
+
+Register an event listener
+
+```ts
+emitter.on<EventName extends keyof Events>(event: EventName, callback: Events[EventName])
+```
