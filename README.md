@@ -9,6 +9,7 @@ import { createEminem } from '@dolanske/eminem'
 
 interface Events {
   join: (username: string, timestamp: number) => void
+  leave: () => void
 }
 
 // Create new eminem instance and provide it with the
@@ -23,6 +24,7 @@ emitter.on('join', (username, timestamp) => {
 // Emit an event. The emit function will expect the same
 // arguments that were provided when new emitter was registered
 emitter.emit('join', 'dolanske', Date.now())
+emitter.emit('leave')
 ```
 
 ### Api
