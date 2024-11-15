@@ -2,7 +2,7 @@
   "name": "@dolanske/eminem",
   "type": "module",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "Slim and fully type-safe event emitter.",
   "author": "dolanske",
   "license": "GPL-3.0",
