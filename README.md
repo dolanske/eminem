@@ -2,6 +2,10 @@
 
 Have you ever wanted to register and emit events and realized there's not a single library out there, that fulfills this very specific and niche need? You're not gonna believe the next part. Your wait is over. Welcome to Eminem. Slim & fully type safe event mitter.
 
+```bash
+npm i @dolanske/eminem
+```
+
 ### How to use it
 
 ```ts
